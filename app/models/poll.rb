@@ -8,6 +8,7 @@
 #
 
 class Poll < ActiveRecord::Base
+  validates :author_id, :title, presence: true
   belongs_to :user,
     class_name: :User,
     primary_key: :id,
@@ -17,5 +18,4 @@ class Poll < ActiveRecord::Base
     class_name: :Question,
     primary_key: :id,
     foreign_key: :poll_id
-
 end
